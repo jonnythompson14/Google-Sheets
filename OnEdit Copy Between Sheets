@@ -1,0 +1,16 @@
+function onEdit() {
+//gets and formats data ranges, to and from sheets.
+var ss = SpreadsheetApp.getActiveSpreadsheet();
+var target = SpreadsheetApp.openById("1v1aIWqIqsdOlMbAbZpKfcHU5MRmRrHOZpOPy6RZMr5Q");
+var source_sheet = ss.getSheetByName("Tracker");
+var target_sheet = target.getSheetByName("Jonny - Budgets");
+var source_range = source_sheet.getRange("C1:W");
+var target_range = target_sheet.getRange("C1:W");
+
+//gets then writes values defined in setup
+var values = source_range.getValues();
+target_range.setValues(values);
+
+//for checking last row with data in cell and formatting range
+var lastRow = source_sheet.getLastRow();  
+}
